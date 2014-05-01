@@ -1,0 +1,46 @@
+
+.content {
+  width: 100%;
+}
+
+footer,
+nav.header,
+section {
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  box-sizing: content-box;
+  width: 960px;
+  padding-right: calc(50% - 480px);
+  padding-left: calc(50% - 480px);
+}
+
+nav.header {
+  ul li {
+    display: inline-block;
+    float: right;
+    margin-left: 1em;
+  }
+}
+
+section {
+  h1, h2 {
+    color: white;
+  }
+
+  clear: both;
+  min-height: 650px;
+  text-align: center;
+  background-color: green;
+}
+
+footer {
+  .copyright {
+    text-align: center;
+  }
+
+  ul li {
+    display: inline-block;
+  }
+
+}

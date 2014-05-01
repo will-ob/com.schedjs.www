@@ -1,0 +1,16 @@
+{
+  "name": "www",
+  "version": "0.0.0",
+  "authors": [
+    "Will O'Brien <will.obrien@dibit.co>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

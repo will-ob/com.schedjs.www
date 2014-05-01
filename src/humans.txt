@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Will O'Brien -- Tech Lead -- @whobrien
+
+# THANKS
+
+    Tanner Burson - For answering _all_ the questions
+
+# TECHNOLOGY COLOPHON
+
+    Ractive
+    HTML5, CSS3, CoffeeScript (of course)
