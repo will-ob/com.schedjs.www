@@ -10,7 +10,7 @@ gulp.task('copy', function(){
     'src/**/*.handlebars',
     'src/**/*.css',
     'src/**/*.js'
-    ]).pipe(gulp.dest('./build/'))
+    ]).pipe(gulp.dest('build/'))
 });
 
 gulp.task('vendor', function(){
@@ -20,14 +20,14 @@ gulp.task('vendor', function(){
     'vendor/**/*.css',
     'vendor/**/*.js',
     'vendor/**/*.{eot,svg,ttf,woff}'
-  ]).pipe(gulp.dest('./build/vendor/'));
+  ]).pipe(gulp.dest('build/vendor/'));
 });
 
 gulp.task('coffee', function(){
 
   return gulp.src('src/**/*.coffee')
     .pipe(coffee())
-    .pipe(gulp.dest('./build/'));
+    .pipe(gulp.dest('build/'));
 
 });
 
@@ -35,15 +35,15 @@ gulp.task('scss', function(){
 
   return gulp.src(['src/**/index.scss'])
     .pipe(sass())
-    .pipe(gulp.dest('./build/'));
+    .pipe(gulp.dest('build/'));
 
 });
 
 
 gulp.task('html', function(){
 
-  return gulp.src(['src/**/*.html'])
-    .pipe(wrap({src: 'src/.templates/htmlTemplate.tmpl'}))
+  return gulp.src(['src/**/index.html'])
+    .pipe(wrap({src: 'src/.templates/html.tmpl'}))
     .pipe(gulp.dest('build/'));
 
 });
