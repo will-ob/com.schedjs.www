@@ -1,0 +1,29 @@
+<h2>Sign in</h2>
+
+<form accept-charset="UTF-8" action="./index_files/index.html" class="new_user" id="new_user" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="AqYexM+85sFw7Txbp4HKKpVXKPVLnxtDzfw8e+1xwzs="></div>
+  <div><label for="user_email">Email</label><br>
+  <input autofocus="autofocus" id="user_email" name="user[email]" type="email" value=""></div>
+
+  <div><label for="user_password">Password</label><br>
+    <input autocomplete="off" id="user_password" name="user[password]" type="password"></div>
+
+    <div><input name="user[remember_me]" type="hidden" value="0"><input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1"> <label for="user_remember_me">Remember me</label></div>
+
+  <div><input name="commit" type="submit" value="Sign in"></div>
+</form>
+
+  <a href="/join">Sign up</a><br>
+
+  <a href="/users/password/new">Forgot your password?</a><br>
+
+  <!--
+
+# $.ajax('http://localhost:5000/users/sign_in', {
+#   contentType: 'application/json',
+#   crossDomain: true,
+#   withCredentials: true, # Default is to not send cookies or anything
+#   data: JSON.stringify({user: {email: "will.obrien@dibit.co", password: "biteme"}}),
+#   type: "POST"
+# });
+
+  -->
