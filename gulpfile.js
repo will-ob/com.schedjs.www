@@ -2,7 +2,23 @@
 var gulp = require('gulp'),
     wrap = require('gulp-wrap'),
     coffee = require('gulp-coffee'),
+    template = require('gulp-template'),
+    env      = require('node-env-file'),
     sass   = require('gulp-sass');
+
+env(__dirname + '/.env');
+
+if(process.env.ENVIRONMENT){
+  env(__dirname + '/.env-' + process.env.ENVIRONMENT, {overwrite: true});
+}
+
+var config = {
+  hosts: {
+    app: process.env.APP_URL
+  }
+}
+
+console.log(process.env)
 
 gulp.task('copy', function(){
 
@@ -43,6 +59,7 @@ gulp.task('scss', function(){
 gulp.task('html', function(){
 
   return gulp.src(['src/**/index.html'])
+    .pipe(template(config))
     .pipe(wrap({src: 'src/.templates/html.tmpl'}))
     .pipe(gulp.dest('build/'));
 
@@ -52,6 +69,7 @@ gulp.task('watch', function(){
   gulp.watch('src/**/*{js,css,json,handlebars}', ['copy']);
   gulp.watch('src/**/*.coffee', ['coffee']);
   gulp.watch('src/**/*.scss', ['scss']);
+  gulp.watch('src/**/index.html', ['html']);
 });
 
 gulp.task('default', ['copy', 'html', 'vendor', 'coffee', 'scss']);
