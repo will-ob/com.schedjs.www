@@ -1,18 +1,36 @@
-<h2>Sign up</h2>
+<div id="page">
+  <div class="modal">
+    <div class="modal-content">
+      <header>
+        <h2>Join</h2>
+      </header>
+      <div id="content"></div>
+      <footer>
+        <a href="/sign-in">Sign in</a>
+      </footer>
+    </div>
+  </div>
+</div>
 
-<form accept-charset="UTF-8" action="/users" class="new_user" id="new_user" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="AqYexM+85sFw7Txbp4HKKpVXKPVLnxtDzfw8e+1xwzs="></div>
+<style>
+.control-group i.lighter {
+  color: grey;
+}
 
-  <div><label for="user_email">Email</label><br>
-  <input autofocus="autofocus" id="user_email" name="user[email]" type="email" value=""></div>
+.control-group:first-of-type {
+  margin-bottom: 1em;
+}
+</style>
 
-  <div><label for="user_password">Password</label><br>
-    <input autocomplete="off" id="user_password" name="user[password]" type="password"></div>
+<link rel="stylesheet" href="/styles/modal.css" />
+<link rel="stylesheet" href="/styles/auth-forms.css" />
 
-  <div><label for="user_password_confirmation">Password confirmation</label><br>
-    <input autocomplete="off" id="user_password_confirmation" name="user[password_confirmation]" type="password"></div>
-
-  <div><input name="commit" type="submit" value="Sign up"></div>
-</form>
-  <a href="/sign-in">Sign in</a><br>
-
-
+<script src="<%= hosts.app %>/config.js"></script>
+<script type="text/javascript"> require["baseUrl"] = "<%= hosts.app %>"; </script>
+<script src="<%= hosts.app %>/vendor/bower/requirejs/require.js"></script>
+<script type="text/javascript">
+require(['pages/join/join'], function(JoinView){
+    new JoinView({el: document.getElementById('content')});
+    document.getElementsByClassName('modal')[0].className += " open";
+});
+</script>

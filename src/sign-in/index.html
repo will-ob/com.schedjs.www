@@ -1,159 +1,21 @@
 <div id="page">
   <div class="modal">
     <div class="modal-content">
-      <div class="header">
+      <header>
         <h2>Sign in</h2>
-      </div>
+      </header>
       <div id="content"></div>
-      <div class="links">
+      <footer>
         <a href="/join">Sign up</a>
         <a href="/users/password/new">Forgot your password?</a>
-      </div>
+      </footer>
     </div>
   </div>
 </div>
 
-<style>
-*:before,
-*:after,
-* {
-  box-sizing: border-box;
-}
 
-html,
-body,
-#page {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-
-#page {
-  background-color: tan;
-  position: absolute;
-  top: 0;
-}
-
-.modal {
-  visibility: hidden;
-
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 50%;
-
-  -webkit-transform: translateX(-50%) translateY(-50%);
-     -moz-transform: translateX(-50%) translateY(-50%);
-      -ms-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
-
-  max-width: 630px;
-  min-width: 320px;
-  height: auto;
-}
-
-.modal-content {
-  -webkit-transform: translateX(5%);
-  -moz-transform: translateX(5%);
-  -ms-transform: translateX(5%);
-  transform: translateX(5%);
-  opacity: 0;
-  -webkit-transition: all 0.5s cubic-bezier(0.25, 0.5, 0.5, 0.9);
-  -moz-transition: all 0.5s cubic-bezier(0.25, 0.5, 0.5, 0.9);
-  transition: all 0.5s cubic-bezier(0.25, 0.5, 0.5, 0.9);
-}
-
-.modal.open .modal-content {
-  -webkit-transform: translateX(0);
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
-  opacity: 1;
-}
-
-.modal.open {
-  visibility: visible;
-}
-
-.header h2 {
-  margin: 0;
-}
-
-.header {
-  background-color: darkred;
-  text-align: center;
-  color: white;
-
-  padding: 1em;
-
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
-}
-
-#content {
-  padding: 1em;
-  background-color: brown;
-  color: white;
-
-  margin: 0 auto;
-
-  text-align: center;
-}
-
-.control-group {
-  overflow: hidden;
-  position: relative;
-  margin: 0 auto 5px auto;
-  width: 250px;
-}
-.control-group i {
-  position: absolute;
-  color: brown;
-  padding-top: .7em;
-  left: 10px;
-  height: 100%;
-}
-
-button[name="submit"] {
-  margin-top: 1em;
-  background-color: darkred;
-  color: white;
-  width: 250px;
-  padding: .5em;
-  outline-width: 0px;
-  border-width: 0px;
-  font-weight: bold;
-}
-
-.links {
-  padding: 1em;
-  background-color: darkred;
-  text-align: left;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
-
-a,
-a:visited {
-  display: block;
-  width: 250px;
-  margin: 0 auto;
-  color: brown;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  outline-width: 0px !important;
-  color: darkred;
-  padding: .5em;
-  padding-left: 2.5em;
-}
-
-</style>
+<link rel="stylesheet" href="/styles/modal.css" />
+<link rel="stylesheet" href="/styles/auth-forms.css" />
 
 <script src="<%= hosts.app %>/config.js"></script>
 <script type="text/javascript"> require["baseUrl"] = "<%= hosts.app %>"; </script>
