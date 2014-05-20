@@ -8,7 +8,8 @@ clean:
 test:
 	./node_modules/.bin/mocha
 
-publish: build
+publish: clean
+	export ENVIRONMENT=prod && gulp
 	rsync -av build/ ec2-54-81-225-47.compute-1.amazonaws.com:/opt/schedjs/ --delete --super --chmod=a+rx
 
 watch: build
