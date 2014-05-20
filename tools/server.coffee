@@ -19,9 +19,11 @@ app = express()
   .use(serve('./build/'))
 
 app.all('*', (req, resp) ->
+  req.headers.origin = "http://#{process.env.HOPPER_API_HOST}:#{process.env.HOPPER_API_PORT}"
+  req.headers.host = "#{process.env.HOPPER_API_HOST}:#{process.env.HOPPER_API_PORT}"
   proxy.proxyRequest(req, resp, {
-    host: 'localhost',
-    port: 3001
+    host: "#{process.env.HOPPER_API_HOST}",
+    port: process.env.HOPPER_API_PORT
   })
 )
 
